@@ -72,4 +72,7 @@ jobs:
           package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_8D6BC6FEF6F54B7FBEBAD484252D84B7 }}
           sku: 'flexconsumption'
-        
+      - name: Debug Secret Access
+        run: echo "Publish profile secret is set."
+          env:
+          PUBLISH_PROFILE: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_8D6BC6FEF6F54B7FBEBAD484252D84B7 }}
