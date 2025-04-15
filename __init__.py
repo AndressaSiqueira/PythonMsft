@@ -16,8 +16,8 @@ if conn_str:
     logger.addHandler(AzureLogHandler(connection_string=conn_str))
 
 # Configurações do Document Intelligence
-form_recognizer_endpoint = os.environ.get("FORM_RECOGNIZER_ENDPOINT")
-form_recognizer_key = os.environ.get("FORM_RECOGNIZER_KEY")
+form_recognizer_endpoint = os.environ.get("https://diandressa.cognitiveservices.azure.com/")
+form_recognizer_key = os.environ.get("6TNkrdnBKBXB7M5oywTOj5T29Koaq1067CFZ5D3iw3pJd5dxnJ1gJQQJ99BDACYeBjFXJ3w3AAALACOGZYx4")
 
 credential = AzureKeyCredential(form_recognizer_key)
 document_client = DocumentAnalysisClient(endpoint=form_recognizer_endpoint, credential=credential)
