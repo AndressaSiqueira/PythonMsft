@@ -1,0 +1,5 @@
+azure-functions
+azure-ai-formrecognizer
+azure-core
+opencensus
+opencensus-ext-azure
