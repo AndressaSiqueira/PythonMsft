@@ -74,5 +74,5 @@ jobs:
           sku: 'flexconsumption'
       - name: Debug Secret Access
         run: echo "Publish profile secret is set."
-          env:
+        env:
           PUBLISH_PROFILE: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_8D6BC6FEF6F54B7FBEBAD484252D84B7 }}
