@@ -6,8 +6,7 @@
       "type": "httpTrigger",
       "direction": "in",
       "name": "req",
-      "methods": [ "post" ],
-      "route": "analisar-pdf"
+      "methods": ["get", "post"]
     },
     {
       "type": "http",
