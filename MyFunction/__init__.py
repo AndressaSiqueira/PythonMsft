@@ -1,6 +1,6 @@
 import logging
 import azure.functions as func
-from .ocr import run_ocr
+from ..ocr import run_ocr
 
 def main(req: func.HttpRequest) -> func.HttpResponse:
     logging.info("Início da função OCR")
@@ -13,7 +13,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
         return func.HttpResponse("Arquivo não enviado", status_code=400)
 
     try:
-        logging.info(f"[{document_id}] Iniciando processamento OCR")
+        logging.info(f"[{document_id}] Iniciando OCR")
         status = run_ocr(file.read(), document_id)
         return func.HttpResponse(f"OCR concluído: {status}", status_code=200)
     except Exception as e:
