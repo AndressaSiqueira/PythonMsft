@@ -68,6 +68,5 @@ jobs:
         id: deploy-to-function
         with:
           app-name: 'functiondessa'
-          slot-name: 'Production'
           package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_92EDB410B02A47E09AD40501AB9025A5 }}
