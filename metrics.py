@@ -5,7 +5,7 @@ from opencensus.stats import view as view_module
 from opencensus.stats import aggregation as aggregation_module
 from opencensus.tags import tag_map as tag_map_module
 
-exporter = new_metrics_exporter(connection_string="InstrumentationKey=<INSTRUMENTATION_KEY>")
+exporter = new_metrics_exporter(connection_string="InstrumentationKey=a55d6c05-206b-438c-94d1-51176abb1f19;IngestionEndpoint=https://eastus2-3.in.applicationinsights.azure.com/;LiveEndpoint=https://eastus2.livediagnostics.monitor.azure.com/;ApplicationId=1e557ba3-a5ec-4971-8b2a-ba849d53c5dc")
 stats_module.stats.view_manager.register_exporter(exporter)
 
 m_latency = measure_module.MeasureFloat("ocr_latency", "Latência do OCR", "ms")
