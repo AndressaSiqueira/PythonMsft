@@ -1,20 +1,21 @@
-# Escolher uma imagem base com Python
-FROM python:3.9-slim
+# Usar a imagem base do Azure Functions para Python
+FROM mcr.microsoft.com/azure-functions/python:4-python3.9
 
-# Definir o diretório de trabalho dentro do container
-WORKDIR /app
+# Definir o diretório de trabalho
+WORKDIR /home/site/wwwroot
 
-# Copiar o arquivo de dependências (requirements.txt)
-COPY requirements.txt .
-
-# Instalar as dependências
-RUN pip install --no-cache-dir -r requirements.txt
-
-# Copiar o restante da aplicação para dentro do container
+# Copiar todos os arquivos para o container
 COPY . .
 
-# Expor a porta 5000 (ou a porta que a aplicação usa)
-EXPOSE 5000
+# Instalar dependências
+RUN pip install -r requirements.txt
 
-# Comando para rodar a aplicação
-CMD ["python", "app.py"]
+# Definir a variável de ambiente para o worker runtime do Azure Functions
+ENV AzureWebJobsScriptRoot=/home/site/wwwroot
+ENV FUNCTIONS_WORKER_RUNTIME=python
+
+# Expor a porta 80 (padrão para containers)
+EXPOSE 80
+
+# Comando para iniciar o servidor da função
+CMD ["python", "-m", "azure.functions.worker"]
