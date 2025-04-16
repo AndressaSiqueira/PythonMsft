@@ -70,4 +70,4 @@ jobs:
           app-name: 'functiondessa'
           slot-name: 'Production'
           package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_7C1B043DF8E94D08B1637DF91DFF5F45 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_92EDB410B02A47E09AD40501AB9025A5 }}
