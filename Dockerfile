@@ -1,8 +1,8 @@
-# Usar a imagem base do Azure Functions para Python
+# Usar a imagem base do Azure Functions para Pythonnnnn
 FROM mcr.microsoft.com/azure-functions/python:4-python3.9
 
 # Definir o diretório de trabalho
-WORKDIR /home/site/wwwroot
+WORKDIR /home/site/wwwroott
 
 # Copiar todos os arquivos para o container
 COPY . .
